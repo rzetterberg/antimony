@@ -37,6 +37,11 @@ public:
     std::list<Node*> childNodes() const;
 
     /*
+     *  Returns the parent node or NULL if this is a top-level graph.
+     */
+    Node* parentNode() const { return parent; }
+
+    /*
      *  Uninstall the given node.
      *  Triggers attached GraphWatcher objects.
      */
