@@ -1,9 +1,9 @@
-template <class N, class T>
-void pruneHash(const QSet<Node*>& nodes, QHash<N*, T>* hash)
+template <class A, class N, class T>
+void pruneHash(const QSet<A*>& set, QHash<N*, T>* hash)
 {
     auto itr = hash->begin();
     while (itr != hash->end())
-        if (!nodes.contains(itr.key()))
+        if (!set.contains(itr.key()))
             itr = hash->erase(itr);
         else
             itr++;
